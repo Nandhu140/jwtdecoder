@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jwtdecode.in/jwtdecoder/sitemap.xml
+Sitemap: https://jwtdecode.in/sitemap.xml
