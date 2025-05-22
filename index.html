@@ -1,840 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-  <title>jwt decode - JWT Decoder, Encoder & Editor - Free Online Tool</title>
-  <meta name="description" content="jwt decode | jwt decoder Free online tool to decode, edit, and encode JWTs (JSON Web Tokens). Paste your token to view or modify the header and payload instantly." />
-  <meta name="keywords" content="jwt decode, JWT, decode jwt, jwt decoder, jwt token decoder, decode jwt token, jwt decode online, jwt decode javascript, jwt decode python, jwt decode nodejs" />
-  <meta name="author" content="jwtdecode.in" />
-  <meta name="googlebot" content="index, follow" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://jwtdecode.in/" />
-
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
-  <meta name="monetag" content="2f8acaed2eb081da4a6734250f6bbb2c">
-  
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="jwt decode - JWT Decoder, Encoder & Editor - Free Online Tool" />
-  <meta property="og:description" content="jwt decode - Instantly decode and edit JWTs online. Fully client-side and private." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://jwtdecode.in/" />
-  <meta property="og:image" content="https://jwtdecode.in/preview.png" />
-
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="jwt decode - JWT Decoder, Encoder & Editor - Free Online Tool" />
-  <meta name="twitter:description" content="jwt decode - Edit and decode JWTs with ease. Secure & client-side." />
-  <meta name="twitter:image" content="https://jwtdecode.in/preview.png" />
-  <meta name="google-adsense-account" content="ca-pub-9852079379452227">
-  <!-- Structured Data (Schema.org) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JWT Decode - Online JWT Decoder and Encoder Tool | jwtdecode.in</title>
+  <meta name="description" content="Decode JWT tokens online at jwtdecode.in. Supports HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512. Encode JWTs with HS256. Free, secure, client-side tool.">
+  <meta name="keywords" content="decode JWT, JWT decoder online, JWT token decode, decode JWT token, JWT decode JavaScript, JWT decode Python, JWT decode Java, JWT decode Node.js, JWT decoder, JWT token decoder, JWT authentication, JWT parser, JWT io decode, jwtdecode.in">
+  <meta name="author" content="jwtdecode.in">
+  <meta property="og:title" content="JWT Decode - Online JWT Decoder and Encoder | jwtdecode.in">
+  <meta property="og:description" content="Free online tool at jwtdecode.in to decode and encode JWT tokens. Supports HS256, RS256, ES256, and more. Secure, client-side JWT decoder and encoder.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jwtdecode.in/">
+  <meta property="og:image" content="https://jwtdecode.in/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JWT Decode - Online JWT Decoder and Encoder | jwtdecode.in">
+  <meta name="twitter:description" content="Decode JWT tokens and encode with HS256 at jwtdecode.in. Free, secure, client-side tool for Angular, Node.js, Java, Python, and more.">
+  <meta name="twitter:image" content="https://jwtdecode.in/og-image.jpg">
+  <link rel="canonical" href="https://jwtdecode.in/">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "jwt decode - JWT Decoder, Encoder & Editor",
-    "applicationCategory": "DeveloperTool",
-    "operatingSystem": "All",
-    "browserRequirements": "Requires JavaScript",
-    "url": "https://jwtdecode.in",
-    "description": "jwt decode - Free JWT tool to decode, edit, and encode JSON Web Tokens in your browser.",
-    "keywords": "jwt decode, JWT, JSON Web Token, decoder, encoder, editor"
+    "@type": "WebApplication",
+    "name": "JWT Decode",
+    "description": "A free online tool at jwtdecode.in to decode JWT tokens (HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512) and encode JWTs with HS256. Secure, client-side JWT decoder and encoder.",
+    "url": "https://jwtdecode.in/",
+    "applicationCategory": "Developer Tools",
+    "operatingSystem": "All"
   }
   </script>
-
-  <style>
-    /* Reset & Base */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Source Code Pro', monospace, monospace;
-      background-color: #ffffff;
-      color: #222222;
-      transition: background-color 0.3s, color 0.3s;
-      min-height: 100vh;
-      line-height: 1.5;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    h1, h2, h3 {
-      font-weight: 700;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      color: #2c3e50;
-    }
-    h2 {
-      margin-top: 2rem;
-      color: #34495e;
-    }
-    p, ul, ol {
-      margin-top: 0;
-      margin-bottom: 1rem;
-    }
-    ul, ol {
-      padding-left: 1.5rem;
-    }
-
-    /* Layout */
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 1100px;
-      width: 100%;
-      gap: 2rem;
-      justify-content: center;
-    }
-    .decoder, .encoder {
-      flex: 1 1 440px;
-      background: #fefefe;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem 1.5rem 2rem 1.5rem;
-      box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
-      display: flex;
-      flex-direction: column;
-      min-width: 320px;
-    }
-
-    label {
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-      display: block;
-    }
-
-    textarea {
-      font-family: 'Source Code Pro', monospace, monospace;
-      font-size: 1rem;
-      padding: 0.75rem;
-      border: 1px solid #bbb;
-      border-radius: 6px;
-      resize: vertical;
-      background-color: #fafafa;
-      color: #222;
-      transition: border-color 0.3s;
-      min-height: 4rem;
-      width: 100%;
-    }
-    textarea:focus {
-      outline: none;
-      border-color: #3498db;
-      background-color: #fff;
-      box-shadow: 0 0 6px #3498dbaa;
-    }
-
-    button {
-      margin-top: 1rem;
-      padding: 10px 24px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      background-color: #3498db;
-      border: none;
-      border-radius: 6px;
-      color: #fff;
-      cursor: pointer;
-      user-select: none;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-    button:hover, button:focus {
-      background-color: #2980b9;
-      transform: scale(1.05);
-      outline: none;
-    }
-    button:active {
-      transform: scale(0.98);
-    }
-    .error {
-      margin-top: 0.5rem;
-      color: #e74c3c;
-      font-weight: 700;
-    }
-
-    /* Tooltips */
-    .tooltip {
-      border-bottom: 1px dotted #666;
-      cursor: help;
-      position: relative;
-      color: #3498db;
-    }
-    .tooltip:hover::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #333;
-      color: white;
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      white-space: nowrap;
-      font-size: 0.85rem;
-      z-index: 10;
-    }
-
-    /* Output */
-    #jwtOutput {
-      background-color: #e8f0fe;
-      min-height: 5rem;
-      font-weight: 600;
-    }
-
-    /* Learning Section */
-    #learning-resource {
-      max-width: 1100px;
-      width: 100%;
-      margin-top: 3rem;
-      background-color: #f0f4f8;
-      padding: 1.5rem 2rem;
-      border-radius: 10px;
-      color: #2d3e50;
-      box-shadow: 0 0 10px rgb(0 0 0 / 0.05);
-    }
-    #learning-resource > div {
-      max-width: 800px; /* Constrain content width */
-      margin: 0 auto;
-    }
-    #learning-resource > div > div {
-      margin-bottom: 1.25rem;
-      padding: 1rem;
-      border-radius: 8px;
-      background-color: white;
-      box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
-    }
-    #learning-resource h3 {
-      margin-bottom: 0.5rem;
-      color: #34495e;
-    }
-
-    /* Visual JWT breakdown */
-    #jwtBreakdownSection {
-      max-width: 1100px;
-      width: 100%;
-      margin-top: 2rem;
-    }
-    #jwtBreakdown {
-      max-width: 800px; /* Match learning-resource content width */
-      margin: 0 auto;
-      background: #ecf0f1;
-      border-radius: 8px;
-      padding: 1.5rem; /* Match learning-resource padding */
-      font-size: 0.9rem;
-      font-family: monospace;
-      white-space: pre-wrap;
-      word-wrap: break-word; /* Ensure long text wraps */
-      color: #34495e;
-      margin-top: 1rem;
-      user-select: text;
-      box-shadow: 0 1px 3px rgb(0 0 0 / 0.05); /* Match learning-resource div shadow */
-    }
-
-    /* Dark mode styles */
-    body.dark-mode {
-      background-color: #121212;
-      color: #ddd;
-    }
-    body.dark-mode textarea {
-      background-color: #1e1e1e;
-      border-color: #444;
-      color: #ddd;
-    }
-    body.dark-mode textarea:focus {
-      background-color: #2a2a2a;
-      border-color: #3498db;
-      box-shadow: 0 0 8px #3498dbaa;
-    }
-    body.dark-mode #jwtOutput {
-      background-color: #263238;
-      color: #80d8ff;
-    }
-    body.dark-mode #learning-resource {
-      background-color: #1e1e1e;
-      color: #ccc;
-      box-shadow: none;
-    }
-    body.dark-mode #learning-resource > div > div {
-      background-color: #263238;
-      box-shadow: none;
-    }
-    body.dark-mode #jwtBreakdown {
-      background-color: #263238;
-      color: #ccc;
-      box-shadow: none;
-    }
-    body.dark-mode .decoder,
-    body.dark-mode .encoder {
-      background: #1e1e1e;
-      border-color: #444;
-      box-shadow: none;
-    }
-    body.dark-mode h1, 
-    body.dark-mode h2, 
-    body.dark-mode h3 {
-      color: #ddd;
-    }
-    body.dark-mode label {
-      color: #ccc;
-    }
-    body.dark-mode button {
-      background-color: #3498db;
-      color: white;
-      transition: background-color 0.3s;
-    }
-    body.dark-mode button:hover,
-    body.dark-mode button:focus {
-      background-color: #2980b9;
-    }
-    body.dark-mode .tooltip {
-      color: #3498db;
-    }
-    body.dark-mode .tooltip:hover::after {
-      background: #222;
-      color: #eee;
-    }
-    .dark-mode-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      z-index: 1000;
-    }
-    .jwt-footer {
-  width: 100vw; /* Full viewport width */
-  margin-top: 3rem;
-  padding: 2rem 1rem;
-  background: linear-gradient(135deg, #e8f0fe 0%, #f0f4f8 100%);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  font-family: 'Source Code Pro', monospace;
-  color: #2d3e50;
-}
-
-.footer-container {
-  /* Removed max-width to make it full-screen */
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  padding: 0 2rem; /* Increased padding for better spacing on wide screens */
-  max-width: 1400px; /* Optional: constrain content width on ultra-wide screens */
-}
-
-.footer-branding {
-  flex: 1 1 300px;
-}
-
-.footer-logo {
-  font-size: 1.5rem;
-  margin: 0;
-  color: #2d3e50;
-  transition: color 0.3s;
-}
-
-.footer-tagline {
-  font-size: 0.9rem;
-  margin: 0.5rem 0 0;
-  color: #34495e;
-  opacity: 0.8;
-}
-
-.footer-nav {
-  flex: 1 1 300px;
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.footer-link {
-  color: #34495e;
-  text-decoration: none;
-  font-size: 0.9rem;
-  position: relative;
-  transition: color 0.3s;
-}
-
-.footer-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #3498db;
-  transition: width 0.3s ease-in-out;
-}
-
-.footer-link:hover::after,
-.footer-link:focus::after {
-  width: 100%;
-}
-
-.footer-link:hover,
-.footer-link:focus {
-  color: #3498db;
-  outline: none;
-}
-
-.footer-social {
-  flex: 1 1 200px;
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-}
-
-.social-link {
-  color: #34495e;
-  transition: transform 0.3s ease, color 0.3s;
-}
-
-.social-link:hover,
-.social-link:focus {
-  color: #3498db;
-  transform: scale(1.2);
-  outline: none;
-}
-
-.social-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.footer-copyright {
-  flex: 1 1 100%;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #34495e;
-  opacity: 0.8;
-  margin-top: 1rem;
-}
-
-.footer-copyright p {
-  margin: 0;
-}
-
-/* Dark Mode */
-body.dark-mode .jwt-footer {
-  background: linear-gradient(135deg, #263238 0%, #1e1e1e 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ccc;
-}
-
-body.dark-mode .footer-logo,
-body.dark-mode .footer-tagline,
-body.dark-mode .footer-link,
-body.dark-mode .social-link,
-body.dark-mode .footer-copyright {
-  color: #ccc;
-}
-
-body.dark-mode .footer-link:hover,
-body.dark-mode .footer-link:focus,
-body.dark-mode .social-link:hover,
-body.dark-mode .social-link:focus {
-  color: #3498db;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0 1rem; /* Reduced padding for smaller screens */
-  }
-
-  .footer-nav,
-  .footer-social {
-    justify-content: center;
-  }
-
-  .footer-social {
-    margin-top: 1rem;
-  }
-}
-  </style>
-
-  <!-- Google Fonts Source Code Pro -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" />
 </head>
-
-<body>
-  <button class="dark-mode-toggle" id="darkModeBtn">Dark Mode</button>
- <h1>jwt decode - JWT Decoder, Encoder & Editor</h1>
-  <p style="text-align:center; max-width: 700px; margin: auto; margin-bottom: 2rem;">
-    jwt decode is a powerful and free online tool that allows you to decode, edit, and encode JWT (JSON Web Tokens) with ease. It helps developers, security professionals, and enthusiasts inspect JWT contents, debug authentication issues, and learn how JWTs work by hands-on editing.
-  </p>
-
-  <div class="container" role="main" aria-label="JWT Decoder and Encoder">
-    <!-- Decoder Section -->
-    <section class="decoder" aria-labelledby="decoderTitle">
-      <h2 id="decoderTitle">JWT Decoder</h2>
-      <label for="jwtInput">
-        Enter JWT Token
-        <span class="tooltip" data-tooltip="Paste your full JWT here. The header and payload will be decoded below.">❓</span>
-      </label>
-      <textarea id="jwtInput" rows="4" placeholder="Paste your JWT token here to decode..."></textarea>
-      <div id="decodeError" class="error" role="alert" aria-live="assertive"></div>
-
-      <label for="headerOutput">Header (decoded)</label>
-      <textarea id="headerOutput" rows="4" readonly aria-live="polite" aria-atomic="true"></textarea>
-
-      <label for="payloadOutput">Payload (decoded)</label>
-      <textarea id="payloadOutput" rows="6" readonly aria-live="polite" aria-atomic="true"></textarea>
-
-      <label for="signatureOutput">Signature (Base64URL)</label>
-      <textarea id="signatureOutput" rows="2" readonly></textarea>
-
-      <button id="decodeBtn" aria-label="Decode JWT token">Decode JWT</button>
-    </section>
-
-    <!-- Encoder Section -->
-    <section class="encoder" aria-labelledby="encoderTitle">
-      <h2 id="encoderTitle">JWT Encoder</h2>
-
-      <label for="headerInput">Header (JSON)</label>
-      <textarea id="headerInput" rows="4" placeholder='{"typ":"JWT","alg":"HS256"}'></textarea>
-
-      <label for="payloadInput">Payload (JSON)</label>
-      <textarea id="payloadInput" rows="6" placeholder='{"sub":"1234567890","name":"John Doe","iat":1516239022}'></textarea>
-
-      <label for="secretKeyInput">
-        Secret / Private Key
-        <span class="tooltip" data-tooltip="If no key is provided, a random signature will be generated (not secure). For HS256, enter your secret key here. For other algorithms, private key input is required.">❓</span>
-      </label>
-      <input
-        type="text"
-        id="secretKeyInput"
-        placeholder="Enter secret or private key for signing"
-        style="font-family: monospace; font-size: 1rem; padding: 0.5rem; border: 1px solid #bbb; border-radius: 6px; width: 100%; margin-bottom: 1rem;"
-      />
-
-      <button id="encodeBtn" aria-label="Encode and sign JWT">Encode & Sign JWT</button>
-
-      <label for="jwtOutput">Encoded JWT</label>
-      <textarea id="jwtOutput" rows="4" readonly aria-live="polite" aria-atomic="true"></textarea>
-
-      <button id="copyBtn" aria-label="Copy encoded JWT to clipboard" style="margin-top:0.5rem;">📋 Copy JWT</button>
-      <button id="clearBtn" aria-label="Clear all inputs" style="margin-top:0.5rem; background-color: #e74c3c;">Clear All</button>
-
-      <div id="encodeError" class="error" role="alert" aria-live="assertive"></div>
-    </section>
-  </div>
-   <section id="jwtBreakdownSection" aria-label="Decoded JWT structure visualization">
-    <h2>JWT Structure Breakdown</h2>
-    <pre id="jwtBreakdown" aria-live="polite" aria-atomic="true"></pre>
-  </section>
-  
-  
-  
-  <section id="learning-resource" aria-label="About jwt decode tool">
-    <h2>About jwt decode Tool</h2>
-    <p>
-      <strong>jwt decode</strong> is an essential online utility for anyone working with JSON Web Tokens (JWTs). The <strong>jwt decode</strong> tool empowers you to quickly <em>decode jwt</em>, <em>encode jwt</em>, and modify JWT tokens securely, all inside your browser. This <strong>jwt decode</strong> application supports multiple signing algorithms, including HS256, with a focus on simplicity and transparency.
-    </p>
-    <p>
-      With <strong>jwt decode</strong>, you can explore JWTs for debugging or educational purposes. Whether you want to <em>decode jwt</em> tokens, generate new ones, or understand token payloads and headers, <strong>jwt decode</strong> makes it easy. Our <strong>jwt decode</strong> tool emphasizes privacy by running fully client-side, so your keys and tokens never leave your computer.
-    </p>
-    <p>
-      The <strong>jwt decode</strong> tool uses modern cryptography APIs to provide realistic encoding and signing. You can test your tokens, verify claims, and even create test tokens signed with your secret key. The <strong>jwt decode</strong> project is continuously evolving, ensuring the best support for all popular JWT algorithms and use cases.
-    </p>
-    <p>
-      Search engines love the <strong>jwt decode</strong> tool because it includes rich semantic content and accurate technical details. Whether you're a developer, security engineer, or student, the <strong>jwt decode</strong> tool helps you master JWTs faster and safer.
-    </p>
-    <p>
-      Try <strong>jwt decode</strong> now: paste your JWT into the decoder or craft a new token in the encoder. The <strong>jwt decode</strong> tool is your go-to JWT utility on the web.
-    </p>
-
-    
-      <h2>JWT Decode Guide</h2>
-      <p>Everything you need to know about decoding, editing, and creating JWT tokens, along with understanding important JWT fields like <code>iat</code>.</p>
-
-      <!-- Question 1 -->
-      
-        <h3>1.How can I decode a JWT token?</h3>
-        <p>You can decode a JWT token by splitting it into three parts — <strong>header</strong>, <strong>payload</strong>, and <strong>signature</strong> — using the period <code>.</code> separator. Then base64url-decode the header and payload.</p>
-        <p>For example:</p>
-        <pre><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2Q<br>T4fwpMeJf36POk6yJV_adQssw5c</code></pre>
-        <p>You can decode it manually or use tools like <strong>jwtdecode</strong> to automatically decode and display the contents.</p>
-      
-
-      <!-- Question 2 -->
-      
-        <h3>2.How to edit a JWT token?</h3>
-        <p>To edit a JWT token:</p>
+<body class="normal-mode">
+  <header>
+    <div class="header-container">
+      <h1 class="logo">JWT Decode</h1>
+      <nav aria-label="Main navigation">
         <ul>
-          <li>Decode the JWT to reveal the header and payload.</li>
-          <li>Modify the payload data (e.g., change username or roles).</li>
-          <li>Re-sign the token using the original secret key and algorithm (e.g., HS256).</li>
+          <li><a href="https://jwtdecode.in/" aria-label="Go to homepage">Home</a></li>
+          <li><a href="https://jwtdecode.in/#about" aria-label="Learn about JWT Decode">About</a></li>
+          <li><a href="https://jwtdecode.in/privacy" aria-label="View privacy policy">Privacy Policy</a></li>
         </ul>
-        <p><strong>Important:</strong> If you don’t have the correct signing key, the modified token will not be valid.</p>
-        <p>Use online tools or libraries (like <code>jsonwebtoken</code> in Node.js) to generate the new token after editing.</p>
+      </nav>
+      <button class="toggle-mode" onclick="toggleMode()" aria-label="Toggle dark mode" role="button">🌙 Dark Mode</button>
+    </div>
+  </header>
+  <main>
+    <section class="jwt-section" aria-label="JWT Decoder and Encoder">
+      <div>
+        <h2>JWT Decoder</h2>
+        <label for="jwt-input">Enter JWT Token</label>
+        <textarea id="jwt-input" oninput="debouncedDecodeJWT()" aria-label="Input JWT token to decode"></textarea>
+        <p class="algorithm-display">Detected Algorithm: <span id="detected-algorithm">None</span></p>
+        <h3>Header (decoded)</h3>
+        <pre id="header-output" aria-label="Decoded JWT header"></pre>
+        <h3>Payload (decoded)</h3>
+        <pre id="payload-output" aria-label="Decoded JWT payload"></pre>
+        <h3>Signature (Base64URL)</h3>
+        <pre id="signature-output" aria-label="JWT signature"></pre>
+      </div>
+      <div>
+        <h2>JWT Encoder</h2>
+        <label for="header-input">Header (JSON)</label>
+        <textarea id="header-input" placeholder='{"alg":"HS256","typ":"JWT"}' aria-label="Input JSON header for JWT encoding"></textarea>
+        <label for="payload-input">Payload (JSON)</label>
+        <textarea id="payload-input" placeholder='{"sub":"1234567890","name":"John Doe","iat":1516239022}' aria-label="Input JSON payload for JWT encoding"></textarea>
+        <label for="encode-secret">Secret / Private Key</label>
+        <textarea id="encode-secret" placeholder="Enter secret key (leave blank to generate random key)" aria-label="Input secret key for JWT encoding"></textarea>
+        <button onclick="encodeJWT()" aria-label="Encode and sign JWT">Encode & Sign JWT</button>
+        <h3>Encoded JWT</h3>
+        <pre id="encoded-jwt" aria-label="Encoded JWT output"></pre>
+        <button onclick="copyJWT()" aria-label="Copy encoded JWT to clipboard">📋 Copy JWT</button>
+        <button onclick="clearAll()" aria-label="Clear all inputs and outputs">Clear All</button>
+      </div>
+    </section>
+    <section id="about" aria-label="About JWT Decode Tool">
+      <h2>About the Tool</h2>
+      <p>JWT Decode, hosted at <a href="https://jwtdecode.in/">jwtdecode.in</a>, is a free, secure, and user-friendly online JWT decoder and encoder designed for developers and security professionals. Decode JWT tokens effortlessly with support for multiple algorithms, including HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, and ES512. Encode JWTs using HS256 with an optional secret key. All operations are performed client-side, ensuring your data remains private. Whether you're working with Angular, Node.js, Java, Python, or other frameworks, our JWT parser simplifies JWT authentication and token management.</p>
       
-
-      <!-- Question 3 -->
+      <h3>What is JWT?</h3>
+      <p>A JSON Web Token (JWT) is a compact, URL-safe token used for secure data exchange, commonly in authentication and authorization scenarios. It consists of three parts: <strong>Header</strong>, <strong>Payload</strong>, and <strong>Signature</strong>, separated by dots (.). The header defines the token type and algorithm (e.g., HS256), the payload contains claims (e.g., user data), and the signature ensures integrity. JWTs are widely used in APIs, OAuth, and services like AWS Cognito and Auth0 for secure, stateless authentication.</p>
       
-        <h3>3.How to create JWT?</h3>
-        <p>Creating a JWT involves three components:</p>
+      <h3>How to Decode JWT Token</h3>
+      <p>Decoding a JWT token allows you to view its header, payload, and signature. With jwtdecode.in, it’s simple:</p>
+      <ol>
+        <li>Paste your JWT token into the "Enter JWT Token" textarea in the decoder section.</li>
+        <li>The tool automatically detects the algorithm (e.g., HS256, RS256, ES256) and displays it.</li>
+        <li>View the decoded header, payload, and signature in the respective output fields.</li>
+        <li>No secret key is required, making it ideal for quick JWT token decoding online.</li>
+      </ol>
+      <p>Our decoder supports all major algorithms, making it compatible with JWTs from Java, JavaScript, Python, Node.js, and more.</p>
+      
+      <h3>How to Edit a JWT Token</h3>
+      <p>Editing a JWT involves decoding it, modifying the header or payload, and re-encoding it. Here’s how to do it with jwtdecode.in:</p>
+      <ol>
+        <li>Decode the JWT token using the decoder section to view its header and payload.</li>
+        <li>Copy the decoded header and payload JSON into the encoder section’s "Header (JSON)" and "Payload (JSON)" textareas.</li>
+        <li>Edit the JSON as needed (e.g., change a claim in the payload or update the algorithm in the header).</li>
+        <li>Optionally provide a secret key for HS256 encoding, or leave it blank to generate a random key.</li>
+        <li>Click "Encode & Sign JWT" to create a new JWT with your changes.</li>
+      </ol>
+      <p>Note: Editing and re-encoding a JWT requires a valid secret key for the signature to be valid. Use this feature for testing or development purposes.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>JWT Decode</h3>
+        <p>Effortlessly decode JWT tokens online at <a href="https://jwtdecode.in/">jwtdecode.in</a> with support for HS256, RS256, ES256, and more. Encode secure JWTs with HS256. Ideal for JWT authentication and token parsing.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Navigation</h3>
         <ul>
-          <li><strong>Header:</strong> Includes algorithm and token type.</li>
-          <li><strong>Payload:</strong> Contains claims like user ID, email, and issue time.</li>
-          <li><strong>Signature:</strong> Signed using a secret key and algorithm.</li>
+          <li><a href="https://jwtdecode.in/" aria-label="Go to homepage">Home</a></li>
+          <li><a href="https://jwtdecode.in/#about" aria-label="Learn about JWT Decode">About</a></li>
+          <li><a href="https://jwtdecode.in/privacy" aria-label="View privacy policy">Privacy Policy</a></li>
         </ul>
-        <p>Example using Node.js:</p>
-        <pre><code>
-const jwt = require('jsonwebtoken');
-const token = jwt.sign({ user: 'admin' }, 'secretKey', { algorithm: 'HS256' });
-        </code></pre>
-      
-
-      <!-- Question 4 -->
-      
-        <h3>4.What is IAT in JWT?</h3>
-        <p><strong>IAT</strong> stands for <code>Issued At</code> and is a standard JWT claim that indicates the timestamp (in seconds since epoch) when the token was created.</p>
-        <p>Example:</p>
-        <pre><code>"iat": 1715991132</code></pre>
-        <p>This helps systems determine the freshness of a token and is often used along with expiration (<code>exp</code>) or not-before (<code>nbf</code>) claims.</p>
-      
-    
-  </section>
-<footer class="jwt-footer">
-  <div class="footer-container">
-    <!-- Branding Section -->
-    <div class="footer-branding">
-      <h3 class="footer-logo">jwt decode</h3>
-      <p class="footer-tagline">Your go-to tool for JWT encoding & decoding</p>
+      </div>
+      <div class="footer-column">
+        <h3>Connect</h3>
+        <ul class="social-links">
+          <li><a href="#" class="social-icon" aria-label="Follow on Twitter">Twitter</a></li>
+          <li><a href="#" class="social-icon" aria-label="View GitHub repository">GitHub</a></li>
+          <li><a href="#" class="social-icon" aria-label="Connect on LinkedIn">LinkedIn</a></li>
+        </ul>
+      </div>
     </div>
-
-    <!-- Navigation Links -->
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="/" class="footer-link" aria-label="Home page">Home</a>
-      <a href="/about" class="footer-link" aria-label="About page">About</a>
-      <a href="/privacy" class="footer-link" aria-label="Privacy policy">Privacy Policy</a>
-    </nav>
-
-    <!-- Social Links -->
-    <div class="footer-social" aria-label="Social media links">
-      <a href="https://jwtdecode.in/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile">
-        <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-        </svg>
-      </a>
-      <a href="mailto:support@jwt-decoder.github.io" class="social-link" aria-label="Email support">
-        <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-          <polyline points="22,6 12,13 2,6"></polyline>
-        </svg>
-      </a>
+    <div class="footer-bottom">
+      <p>© 2025 jwtdecode.in. All rights reserved.</p>
     </div>
-
-    <!-- Copyright -->
-    <div class="footer-copyright">
-      <p>© 2025 jwt decode. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-  
-
-  <script>
-    // Utility functions for Base64URL encode/decode
-    function base64UrlEncode(str) {
-      return btoa(str)
-        .replace(/\+/g, '-')
-        .replace(/\//g, '_')
-        .replace(/=+$/, '');
-    }
-
-    function base64UrlDecode(str) {
-      str = str.replace(/-/g, '+').replace(/_/g, '/');
-      while (str.length % 4) str += '=';
-      try {
-        return atob(str);
-      } catch {
-        return null;
-      }
-    }
-
-    const encoder = new TextEncoder();
-    const decoder = new TextDecoder();
-
-    function tryParseJSON(jsonString) {
-      try {
-        return JSON.parse(jsonString);
-      } catch {
-        return null;
-      }
-    }
-
-    function showError(element, message) {
-      element.textContent = message;
-    }
-    function clearError(element) {
-      element.textContent = '';
-    }
-
-    function decodeJWT(jwt) {
-      if (!jwt || jwt.trim() === '') {
-        return { error: 'Please enter a JWT token.' };
-      }
-      const parts = jwt.split('.');
-      if (parts.length !== 3) {
-        return { error: 'Invalid JWT token format. A JWT must have 3 parts.' };
-      }
-      const [headerB64, payloadB64, signatureB64] = parts;
-      const headerJson = base64UrlDecode(headerB64);
-      const payloadJson = base64UrlDecode(payloadB64);
-      if (!headerJson || !payloadJson) {
-        return { error: 'Invalid Base64URL encoding in JWT.' };
-      }
-      const header = tryParseJSON(headerJson);
-      const payload = tryParseJSON(payloadJson);
-      if (!header || !payload) {
-        return { error: 'Invalid JSON in JWT header or payload.' };
-      }
-      return { header, payload, signature: signatureB64, error: null };
-    }
-
-    function displayJWTBreakdown(header, payload, signature) {
-      const prettyHeader = JSON.stringify(header, null, 2);
-      const prettyPayload = JSON.stringify(payload, null, 2);
-      const breakdownText = 
-        `HEADER:\n${prettyHeader}\n\nPAYLOAD:\n${prettyPayload}\n\nSIGNATURE (Base64URL):\n${signature}`;
-      document.getElementById('jwtBreakdown').textContent = breakdownText;
-    }
-
-    async function encodeJWT(header, payload, secretKey) {
-      const headerString = JSON.stringify(header);
-      const payloadString = JSON.stringify(payload);
-      const headerB64 = base64UrlEncode(headerString);
-      const payloadB64 = base64UrlEncode(payloadString);
-
-      const data = new TextEncoder().encode(`${headerB64}.${payloadB64}`);
-
-      if (!secretKey) {
-        const randomSig = base64UrlEncode(crypto.getRandomValues(new Uint8Array(32)).reduce((str, byte) => str + String.fromCharCode(byte), ''));
-        return `${headerB64}.${payloadB64}.${randomSig}`;
-      }
-
-      if (!header.alg || header.alg.toUpperCase() !== 'HS256') {
-        throw new Error('Only HS256 algorithm is supported in this version.');
-      }
-
-      const keyData = new TextEncoder().encode(secretKey);
-      const cryptoKey = await crypto.subtle.importKey(
-        'raw',
-        keyData,
-        { name: 'HMAC', hash: { name: 'SHA-256' } },
-        false,
-        ['sign']
-      );
-
-      const signatureBuffer = await crypto.subtle.sign('HMAC', cryptoKey, data);
-      const signatureBytes = new Uint8Array(signatureBuffer);
-      let binary = '';
-      for (let i = 0; i < signatureBytes.byteLength; i++) {
-        binary += String.fromCharCode(signatureBytes[i]);
-      }
-      const signatureB64 = base64UrlEncode(binary);
-
-      return `${headerB64}.${payloadB64}.${signatureB64}`;
-    }
-
-    document.getElementById('decodeBtn').addEventListener('click', () => {
-      const jwtInput = document.getElementById('jwtInput').value.trim();
-      const decodeErrorEl = document.getElementById('decodeError');
-      clearError(decodeErrorEl);
-
-      const result = decodeJWT(jwtInput);
-      if (result.error) {
-        showError(decodeErrorEl, result.error);
-        document.getElementById('headerOutput').value = '';
-        document.getElementById('payloadOutput').value = '';
-        document.getElementById('signatureOutput').value = '';
-        document.getElementById('jwtBreakdown').textContent = '';
-        return;
-      }
-
-      document.getElementById('headerOutput').value = JSON.stringify(result.header, null, 2);
-      document.getElementById('payloadOutput').value = JSON.stringify(result.payload, null, 2);
-      document.getElementById('signatureOutput').value = result.signature;
-
-      displayJWTBreakdown(result.header, result.payload, result.signature);
-    });
-
-    document.getElementById('encodeBtn').addEventListener('click', async () => {
-      const headerInput = document.getElementById('headerInput').value.trim();
-      const payloadInput = document.getElementById('payloadInput').value.trim();
-      const secretKey = document.getElementById('secretKeyInput').value;
-
-      const encodeErrorEl = document.getElementById('encodeError');
-      clearError(encodeErrorEl);
-
-      const header = tryParseJSON(headerInput);
-      const payload = tryParseJSON(payloadInput);
-
-      if (!header) {
-        showError(encodeErrorEl, 'Invalid JSON in header.');
-        return;
-      }
-      if (!payload) {
-        showError(encodeErrorEl, 'Invalid JSON in payload.');
-        return;
-      }
-
-      try {
-        const jwt = await encodeJWT(header, payload, secretKey);
-        document.getElementById('jwtOutput').value = jwt;
-        document.getElementById('jwtInput').value = jwt;
-        document.getElementById('decodeBtn').click();
-      } catch (e) {
-        showError(encodeErrorEl, e.message);
-      }
-    });
-
-    document.getElementById('copyBtn').addEventListener('click', () => {
-      const jwtOutput = document.getElementById('jwtOutput').value;
-      if (!jwtOutput) return;
-      navigator.clipboard.writeText(jwtOutput).then(() => {
-        alert('JWT copied to clipboard!');
-      }).catch(() => {
-        alert('Failed to copy JWT.');
-      });
-    });
-
-    document.getElementById('clearBtn').addEventListener('click', () => {
-      document.getElementById('jwtInput').value = '';
-      document.getElementById('headerOutput').value = '';
-      document.getElementById('payloadOutput').value = '';
-      document.getElementById('signatureOutput').value = '';
-      document.getElementById('headerInput').value = '';
-      document.getElementById('payloadInput').value = '';
-      document.getElementById('secretKeyInput').value = '';
-      document.getElementById('jwtOutput').value = '';
-      document.getElementById('decodeError').textContent = '';
-      document.getElementById('encodeError').textContent = '';
-      document.getElementById('jwtBreakdown').textContent = '';
-    });
-
-    const darkModeToggle = document.querySelector('.dark-mode-toggle');
-    darkModeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      if (document.body.classList.contains('dark-mode')) {
-        darkModeToggle.textContent = '☀️ Light Mode';
-        darkModeToggle.setAttribute('aria-label', 'Toggle light mode');
-      } else {
-        darkModeToggle.textContent = '🌙 Dark Mode';
-        darkModeToggle.setAttribute('aria-label', 'Toggle dark mode');
-      }
-    });
-  </script>
+  </footer>
+  <script type="module" src="script.js"></script>
 </body>
 </html>
