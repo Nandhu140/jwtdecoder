@@ -1,0 +1,282 @@
+/* style.css */
+body {
+  font-family: 'Source Code Pro', monospace;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+.normal-mode {
+  background: #ffffff;
+  color: #222222;
+}
+.dark-mode {
+  background: #121212;
+  color: #ddd;
+}
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.dark-mode header {
+  background: #1e1e1e;
+  box-shadow: none;
+}
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.logo {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+.toggle-mode {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  background: #555;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.toggle-mode:hover {
+  background: #777;
+}
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+section[aria-label="About JWT Decode Tool"] {
+  background: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+.dark-mode section[aria-label="About JWT Decode Tool"] {
+  background: #1e1e1e;
+  border-color: #444;
+  box-shadow: none;
+}
+section[aria-label="About JWT Decode Tool"] ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+section[aria-label="About JWT Decode Tool"] li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+.jwt-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.jwt-section > div {
+  flex: 1 1 440px;
+  background: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem 1.5rem 2rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  min-width: 320px;
+}
+.dark-mode .jwt-section > div {
+  background: #1e1e1e;
+  border-color: #444;
+  box-shadow: none;
+}
+textarea {
+  width: 100%;
+  min-height: 4rem;
+  padding: 0.75rem;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  resize: vertical;
+  background-color: #fafafa;
+  color: #222;
+}
+textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  background-color: #fff;
+  box-shadow: 0 0 6px #3498dbaa;
+}
+.dark-mode textarea {
+  background-color: #1e1e1e;
+  border-color: #444;
+  color: #ddd;
+}
+.dark-mode textarea:focus {
+  background-color: #2a2a2a;
+  border-color: #3498db;
+  box-shadow: 0 0 8px #3498dbaa;
+}
+button {
+  margin-top: 1rem;
+  padding: 10px 24px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: #3498db;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+button:hover, button:focus {
+  background-color: #2980b9;
+  transform: scale(1.05);
+  outline: none;
+}
+button:active {
+  transform: scale(0.98);
+}
+.dark-mode button {
+  background-color: #3498db;
+  color: white;
+}
+.dark-mode button:hover, .dark-mode button:focus {
+  background-color: #2980b9;
+}
+pre {
+  background: #e8f0fe;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #34495e;
+}
+.dark-mode pre {
+  background: #263238;
+  color: #ccc;
+}
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.dark-mode a {
+  color: #80d8ff;
+}
+.algorithm-display {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #34495e;
+}
+.dark-mode .algorithm-display {
+  color: #ddd;
+}
+footer {
+  background: #2c3e50;
+  color: white;
+  padding: 2rem 1rem;
+}
+.dark-mode footer {
+  background: #1e1e1e;
+}
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-column h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+.footer-column p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+.footer-column a {
+  color: white;
+  text-decoration: none;
+}
+.footer-column a:hover {
+  text-decoration: underline;
+}
+.social-links {
+  display: flex;
+  flex-direction: column;
+}
+.social-icon::before {
+  content: '🔗 ';
+  margin-right: 0.5rem;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+}
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .toggle-mode {
+    align-self: flex-end;
+    margin-top: 0.5rem;
+  }
+  .jwt-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
