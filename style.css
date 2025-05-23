@@ -1,3 +1,4 @@
+/* style.css */
 body {
   font-family: 'Source Code Pro', monospace;
   margin: 0;
@@ -34,9 +35,9 @@ header {
   flex-wrap: wrap;
 }
 .logo {
-  max-height: 40px; /* Adjust based on your logo's dimensions */
-  width: auto;
-  display: block;
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 nav ul {
   list-style: none;
@@ -278,4 +279,4 @@ footer {
     align-items: center;
     text-align: center;
   }
-}
+} 
