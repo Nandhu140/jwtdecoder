@@ -4,7 +4,7 @@
 
 **JWT Decode** is a free, open-source, and client-side JWT decoder and encoder that supports all major algorithms including HS256, RS256, ES256, and more. Built for developers and security professionals, this tool helps you inspect and generate JSON Web Tokens (JWTs) with full transparency — no data is sent to any server.
 
-> 🔗 Try it live: [JWTDecoder](https://jwtdecode.in)
+> 🔗 Try it live: [Decode JWTs online with jwtdecode.in](https://jwtdecode.in)
 
 ---
 
@@ -30,7 +30,7 @@
 
 ## 🖥 Live Demo
 
-Visit the live version at [JWTDecoder](https://jwtdecode.in)
+Visit the live version at [Decode JWTs online with jwtdecode.in](https://jwtdecode.in)
 
 > Fast, minimal, and works fully offline after first load (PWA behavior coming soon).
 
@@ -54,5 +54,4 @@ Visit the live version at [JWTDecoder](https://jwtdecode.in)
 
 ---
 
-
-> If you find this tool useful, consider linking to [JWTDecoder](https://jwtdecode.in) from your blog, doc, or site to help others find it too.
+> If you find this tool useful, consider linking to [Decode JWTs online with jwtdecode.in](https://jwtdecode.in) from your blog, doc, or site to help others find it too.
