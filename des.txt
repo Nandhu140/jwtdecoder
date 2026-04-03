@@ -1,0 +1,7 @@
+Participants receive access to a web-based “AI Story Generator” application that allows users to log in and generate personalized stories by entering their name.
+
+After logging in with the provided credentials, users are presented with a simple interface where they can submit input to generate a story. The application appears to function normally for standard inputs, returning a static story that includes the provided name.
+
+However, beneath the surface, the application processes user input using a serialized object format for performance optimization. Improper handling of this serialized data introduces a vulnerability that can be exploited.
+
+Participants must analyze how the input is processed, identify the underlying serialization mechanism, and craft a malicious payload to manipulate the application’s behavior
